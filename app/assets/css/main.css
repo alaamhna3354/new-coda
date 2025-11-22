@@ -1,0 +1,85 @@
+@import "tailwindcss";
+@import "@nuxt/ui";
+
+:root {
+  --primary: #33c7e0;
+}
+
+html {
+  color-scheme: dark;
+  overflow-x: hidden;
+}
+
+body {
+  @apply grid bg-gray-950 bg-repeat text-gray-50;
+  font-family: 'DM Sans', "Noto Sans Arabic", sans-serif;
+  background-image: url('/assets/noise-texture.svg');
+}
+html[lang="ar"] body {
+  font-weight: 600;
+  letter-spacing: .5px 
+}
+
+.buttonLink {
+  @apply relative inline-flex h-fit w-fit rounded-full px-4 py-2 cursor-pointer;
+  @apply border border-sky-100/20 bg-sky-200/10 text-sky-200 outline-none ring-sky-300;
+  @apply transition-colors hover:border-sky-200/40 hover:text-sky-300 focus:ring-2;
+}
+
+/* ✅ هذا بديل after بدون ما نخسر أي تأثير */
+.buttonLink::after {
+  content: '';
+  @apply absolute inset-0 -z-10 rounded-full bg-sky-100 opacity-0 blur-md transition-all duration-500;
+  animation: pulse 2s infinite;
+}
+
+.buttonLink:hover::after {
+  @apply opacity-15;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.15;
+  }
+}
+
+.glass-container {
+  position: relative;
+}
+
+.glass-container::before {
+  @apply absolute -inset-[10px] -z-10 rounded-xl border border-gray-100/20 bg-gray-200/10 backdrop-blur-md;
+  content: '';
+}
+
+.glassmorphic {
+  @apply bg-gradient-to-b from-gray-50/15 to-gray-50/5 backdrop-blur-sm backdrop-blur-lg;
+}
+
+.glow-border {
+  @apply shadow-[0_0_15px_rgba(13,_147,_242,_0.3)];
+}
+
+.glow-border-hover {
+  @apply transition-all duration-300 hover:shadow-[0_0_25px_rgba(13,_147,_242,_0.5)];
+}
+
+textarea {
+  resize: none;
+  min-height: 150px;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+}
+
+.error-message {
+  margin-top: 5px;
+  margin-bottom: 10px;
+  display: block;
+  text-shadow: 0 0 7px #f57046, 0 0 10px #f57046, 0 0 21px #f57046;
+}
