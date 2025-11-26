@@ -2,7 +2,7 @@
 name: "Project Analysis"
 slug: "project-analysis"
 icon: "material-symbols:monitoring"
-description: "Ensuring your project's success from the start."
+description: "Ensuring your project's success from the very beginning, with a clear vision, strategic planning, and flawless execution that drive meaningful results."
 ---
 
 ## Project Analysis
