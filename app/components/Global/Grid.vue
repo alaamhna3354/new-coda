@@ -98,7 +98,7 @@ onMounted(() => {
 
 <template>
   <svg
-    id="glide-grid"
+    
     xmlns="http://www.w3.org/2000/svg"
     fill="none"
     viewBox="0 0 935 425"

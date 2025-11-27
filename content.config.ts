@@ -38,6 +38,7 @@ export default defineContentConfig({
         Workshop_en: defineCollection({
             source: 'en/**/academy/*.md',
             schema: z.object({
+                slug: z.string().nonempty(),
                 title: z.string().nonempty(),
                 description: z.string(),
                 date: z.date(),
@@ -47,6 +48,7 @@ export default defineContentConfig({
         Workshop_ar: defineCollection({
             source: 'ar/**/academy/*.md',
             schema: z.object({
+                slug: z.string().nonempty(),
                 title: z.string().nonempty(),
                 description: z.string(),
                 date: z.date(),

@@ -1,7 +1,8 @@
 <template>
     <OglBounded class="relative z-20 mt-30">
         <div v-if="services" class="mx-auto w-full max-w-6xl flex flex-col items-center relative">
-                <div class="glow absolute -z-10 aspect-square w-full max-w-sm rounded-full bg-sky-500/50 blur-[160px] filter" />
+            <div
+                class="glow absolute -z-10 aspect-square w-full max-w-sm rounded-full bg-sky-500/50 blur-[160px] filter" />
             <h2 class="text-balance text-center text-5xl font-medium md:text-7xl">
                 {{ $t('Services') }}
             </h2>
@@ -21,7 +22,9 @@
         </div>
     </OglBounded>
 </template>
-<style lang="scss" scoped>
+<style scoped>
+@reference "tailwindcss";
+
 .service-item {
     max-height: 200px;
     border-radius: 0.25rem;
@@ -37,37 +40,39 @@
             #5984d360 57%,
             #3862a544 85%,
             #3a4f7e4b 100%);
-    @media (max-width:768px) {
+}
+
+.service-item::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(2, 15, 30, 0.25);
+    pointer-events: none;
+    transition: .5s;
+}
+
+.service-item:hover {
+    border-top: 2px solid var(--primary);
+}
+
+.service-item:hover::before {
+    opacity: 0;
+}
+
+@media (max-width:768px) {
+    .service-item {
         margin-inline-start: 15px;
         margin-inline-end: 15px;
     }
-    &::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: rgba(2, 15, 30, 0.25);
-        pointer-events: none;
-        transition: .5s;
-    }
-
-    &:hover {
-        border-top: 2px solid var(--primary);
-
-        &::before {
-            opacity: 0;
-        }
-    }
 }
-</style>
-<style scoped>
-@reference "tailwindcss";
 
 .seeMore {
     @apply relative inline-flex h-fit w-fit rounded-full px-4 py-2 cursor-pointer;
     @apply border border-sky-100/20 bg-sky-200/10 text-sky-200 outline-none ring-sky-300;
     @apply transition-colors hover:border-sky-200/40 hover:text-sky-300 focus:ring-2;
 }
-.service-item:hover .seeMore{
+
+.service-item:hover .seeMore {
     color: var(--color-sky-300);
     border-color: color-mix(in oklab, var(--color-sky-200, oklch(90.1% 0.058 230.902)) 40%, transparent);
 }

@@ -9,6 +9,7 @@ tags:
   - roadmap
   - career
   - web
+category: "Frontend"
 authors:
   - name: "Alaa Mhna"
     description: "Frontend Engineer"

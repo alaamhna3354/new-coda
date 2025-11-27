@@ -9,6 +9,7 @@ tags:
   - خارطة_طريق
   - مسار_وظيفي
   - ويب
+category: "Frontend"
 authors:
   - name: "Alaa Mhna"
     description: "مهندس فرونت إند"

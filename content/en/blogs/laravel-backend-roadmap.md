@@ -9,6 +9,7 @@ tags:
   - roadmap
   - laravel
   - api
+category: "Full-stack"
 authors:
   - name: "Hammam Zarefa"
     description: "Full-stack Developer"

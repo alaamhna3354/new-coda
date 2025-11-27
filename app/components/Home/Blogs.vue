@@ -7,7 +7,8 @@ const props = defineProps({
 })
 const blogsUi = ref({
     root: 'transition border border-sky-50/30 hover:bg-slate-900/60',
-    date: 'text-gray-400',
+    body:' !pb-2',
+    date: 'text-gray-300',
     title: 'text-primary',
     description: 'text-white',
     image: 'transform transition-transform duration-200 group-hover/blog-post:scale-110',
@@ -24,12 +25,16 @@ const blogsUi = ref({
         <!-- Blogs list -->
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 mt-10">
             <!-- Blog item -->
-            <UBlogPost variant="ghost" :to="`/blogs/${blog.slug}`" :ui="blogsUi" v-for="blog in blogs.slice(0, 6)" :key="blogs.slug"
-                :title="blog.title"
-                :description="blog.description"
-                :image="blog.image"
-                :date="blog.date"
-                :authors="blog.authors" />
+            <UBlogPost variant="ghost" :to="`/blogs/${blog.slug}`" :ui="blogsUi" v-for="blog in blogs.slice(0, 6)"
+                :key="blogs.slug" :title="blog.title" :description="blog.description" :image="blog.image"
+                :date="blog.date" :authors="blog.authors">
+                <template #footer>
+                    <div class="flex flex-wrap gap-2 px-4 sm:px-6 pt-3 pb-3">
+                        <UBadge v-for="tag in (blog.meta.tags || [])" :key="tag" :label="tag" color="primary"
+                            variant="subtle" />
+                    </div>
+                </template>
+            </UBlogPost>
         </div>
         <NuxtLink v-if="blogs.length > 6" to="/blogs" class="buttonLink mt-10 ">
             <span class="truncate">{{ $t('See More') }}</span>

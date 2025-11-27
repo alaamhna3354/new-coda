@@ -1,3 +1,3 @@
 <template>
-  <img src="/Coda.png" />
+  <img src="/Logo.png" />
 </template>

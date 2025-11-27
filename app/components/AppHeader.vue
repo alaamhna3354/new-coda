@@ -5,7 +5,7 @@
       <div class="flex items-center justify-between">
         <NuxtLink to="/" class="z-50" @click="isOpen = false">
           <div class="logo">
-            <GlobalLogo class="w-[45px]" />
+            <GlobalLogo class="pulsing-logo  w-[45px]" />
             <strong class="uppercase">{{ $t('Coda') }}</strong>
           </div>
         </NuxtLink>
@@ -54,6 +54,24 @@
 
 .link:hover {
   color: #33c7e0;
+}
+.pulsing-logo {
+  /* نبض خفيف للّوغو */
+  animation: logo-pulse 2.2s ease-in-out infinite;
+}
+@keyframes logo-pulse {
+  0% {
+    filter: brightness(1);
+    opacity: 0.7;
+  }
+  40% {
+    filter: brightness(2);
+    opacity: 1;
+  }
+  100% {
+    filter: brightness(1);
+    opacity: 0.7;
+  }
 }
 </style>
 <script setup>

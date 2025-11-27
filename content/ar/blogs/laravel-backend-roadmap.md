@@ -9,6 +9,7 @@ tags:
   - لارافيل
   - خارطة_طريق
   - api
+category: "Full-stack"
 authors:
   - name: "Hammam Zarefa"
     description: "مطوّر فل ستاك"
