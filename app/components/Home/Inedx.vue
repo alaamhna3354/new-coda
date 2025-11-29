@@ -58,7 +58,7 @@ watch(locale, async (newLocale) => {
   await fetchBlogs()
 })
 useHead({
-  title: home.value?.meta.hero.title || 'Coda Tech Solutions',
+  title: home.value?.meta.hero.title + 'Coda' || 'Coda Tech Solutions',
   meta: [
     { name: 'description', content: home.value?.meta.hero.description || '' }
   ]

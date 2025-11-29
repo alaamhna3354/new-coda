@@ -9,7 +9,7 @@
     <div v-if="HeroContet" class="absolute z-[4] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-center w-full p-1">
       <h1 class="mx-auto max-w-3xl text-4xl font-medium md:text-6xl hero-title-cyber" @mousemove="handleGlow"
         ref="heroTitle">
-        {{ HeroContet.title?.replace('Coda', '') }}
+        {{ HeroContet.title}}
         <span class="font-bold hero-coda">{{ $t('Coda') }}</span>
       </h1>
       <p class=" mx-auto mt-6 max-w-md text-xl text-gray-300">

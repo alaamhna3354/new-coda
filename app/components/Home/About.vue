@@ -13,7 +13,7 @@
                     <h2 class="text-white text-2xl md:text-4xl font-black leading-tight ">
                         {{ AboutContet.title }}
                     </h2>
-                    <h3 class="mt-5 mb-5 text-white/80 text-md font-normal leading-normal">
+                    <h3 class="mt-5 mb-5 text-white/80 text-lg font-normal leading-normal">
                         {{ AboutContet.description }}
                     </h3>
                     <NuxtLink to="/about" class="buttonLink">

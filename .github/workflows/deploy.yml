@@ -33,7 +33,7 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
 
           # generate
-          local-dir: ./dist/
+          local-dir: ./.output/public/
           # (Hostinger)
           server-dir: /public_html/coda/
 

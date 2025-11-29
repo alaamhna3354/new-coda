@@ -1,6 +1,6 @@
 ---
 hero:
-  title: "Empower Your Business Growth with Coda"
+  title: "Empower Your Business Growth with"
   description: "Boost your business efficiency and engagement."
   button: "Start Your Digital Transformation Today"
 
