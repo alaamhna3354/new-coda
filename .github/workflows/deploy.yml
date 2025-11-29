@@ -10,21 +10,30 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
+      # 1️⃣ Checkout repo
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup Node
+      # 2️⃣ Setup Node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'npm'
 
+      # 3️⃣ Install dependencies
       - name: Install dependencies
         run: npm ci
 
+      # 4️⃣ Generate static site (Nuxt 4)
       - name: Generate static site
         run: npm run generate
 
+      # 5️⃣ List generated files (debug)
+      - name: List generated files
+        run: ls -R ./dist/
+
+      # 6️⃣ Deploy to Hostinger via FTP
       - name: Deploy to Hostinger via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.6
         with:
@@ -32,12 +41,10 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
 
-          # generate
-          local-dir: ./.output/public/
-          # (Hostinger)
+          # Nuxt 4 static output
+          local-dir: ./dist/
           server-dir: /public_html/coda/
 
           exclude: |
             **/.git*
-            **/.git*/**
             **/node_modules/**
