@@ -4,7 +4,6 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: false },
   modules: [
-    // '@nuxtjs/tailwindcss',
     '@nuxt/ui',
     '@nuxt/eslint',
     '@nuxt/content',
@@ -37,7 +36,7 @@ export default defineNuxtConfig({
         { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
         {
           rel: 'stylesheet',
-          href: 'https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Noto+Sans+Arabic:wght@400;500;700&display=swap'
+          href: 'https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Amiri:ital,wght@400;500;700&display=swap'
         },
       ],
       
@@ -49,19 +48,20 @@ export default defineNuxtConfig({
     }
   },
   i18n: {
-    defaultLocale: 'en',
+    defaultLocale: 'ar',
     langDir: 'locales',
     locales: [
-      { code: 'en', name: 'English', file: 'en.json' },
-      { code: 'ar', name: 'Arabic', file: 'ar.json' }
+      { code: 'en', name: 'English', file: 'en.json', language: 'en' },
+      { code: 'ar', name: 'Arabic',  file: 'ar.json', language: 'ar' }
     ],
     strategy: 'no_prefix',
-    detectBrowserLanguage: {
-      useCookie: true,        
-      cookieKey: 'i18n_redirected',
-      redirectOn: 'root',      
-      alwaysRedirect: false
-    }
+    detectBrowserLanguage: false ,
+    // detectBrowserLanguage: {
+    // useCookie: true,        
+    //   cookieKey: 'i18n_redirected',
+    //   redirectOn: 'root',      
+    //   alwaysRedirect: false
+    // }
   },
   // 📱 PWA config
   pwa: {

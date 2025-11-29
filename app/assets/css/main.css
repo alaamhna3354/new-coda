@@ -12,11 +12,15 @@ html {
 
 body {
   @apply grid bg-gray-950 bg-repeat text-gray-50;
-  font-family: 'DM Sans', "Noto Sans Arabic", sans-serif;
   background-image: url('/assets/noise-texture.svg');
+}
+
+html[lang="en"] body {
+  font-family: 'DM Sans', sans-serif;
 }
 html[lang="ar"] body {
   font-weight: 600;
+  font-family: "Amiri", sans-serif;
   letter-spacing: .5px 
 }
 

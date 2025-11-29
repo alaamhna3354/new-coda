@@ -6,7 +6,7 @@
         <NuxtLink to="/" class="z-50" @click="isOpen = false">
           <div class="logo">
             <GlobalLogo class="pulsing-logo  w-[45px]" />
-            <strong class="uppercase">{{ $t('Coda') }}</strong>
+            <strong class="uppercase ms-1 text-2xl tracking-widest">{{ locale == 'en' ? 'DA' : 'كودا' }}</strong>
           </div>
         </NuxtLink>
         <div class="flex md:hidden items-center">
@@ -41,6 +41,8 @@
 <style scoped>
 .logo {
   text-align: center;
+  display: flex;
+  align-items: flex-start;
 }
 
 .languages span,

@@ -21,7 +21,7 @@
                   >
                     {{ formattedWhatsapp }}
                   </a>
-                  <button @click="copyToClipboard(social.whatsapp)" class="text-xs text-slate-400 hover:text-slate-200 ml-auto cursor-pointer flex items-center" >
+                  <button @click="copyToClipboard(social.whatsapp)" class="text-xs text-slate-400 hover:text-slate-200 ms-auto cursor-pointer flex items-center" >
                     <Icon v-if="Copied" name="lets-icons:check-fill" class="text-green-200 text-xl me-1" />
                     {{ $t('Copy') }}
                   </button>

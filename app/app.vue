@@ -1,5 +1,5 @@
 <script setup>
-const { locale } = useI18n()
+const { locale,setLocale } = useI18n()
 // Loading page
 const nuxtApp = useNuxtApp()
 
