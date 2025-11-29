@@ -116,7 +116,7 @@
               :disabled="nextButtonProps?.disabled"
               class="buttonLink disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              {{ isLastStep ? 'Complete' : nextButtonText }}
+              {{ isLastStep ? $t('Complete') : nextButtonText }}
             </button>
           </div>
         </div>

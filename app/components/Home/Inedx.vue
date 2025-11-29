@@ -22,7 +22,7 @@
 </template>
 <script setup>
 // Data Content
-const { locale } = useI18n()
+const { locale ,t } = useI18n()
 const home = ref()
 const services = ref([])
 const projects = ref([])
@@ -58,7 +58,7 @@ watch(locale, async (newLocale) => {
   await fetchBlogs()
 })
 useHead({
-  title: home.value?.meta.hero.title + 'Coda' || 'Coda Tech Solutions',
+  title: home.value?.meta.hero.title + ' ' + t('Coda') || 'Coda Tech Solutions',
   meta: [
     { name: 'description', content: home.value?.meta.hero.description || '' }
   ]
