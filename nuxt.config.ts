@@ -9,7 +9,6 @@ export default defineNuxtConfig({
     '@nuxt/content',
     '@nuxt/image',
     '@nuxtjs/i18n',
-    '@vite-pwa/nuxt'
   ],
   css: ['~/assets/css/main.css'],
   vite: {
@@ -42,6 +41,10 @@ export default defineNuxtConfig({
       
     }
   },
+  runtimeConfig: {
+    // The private keys which are only available within server-side
+    apiSecret: 'fs_DD9PPlGmvn3aVL7tNgtI12tePzel97pa',
+  },
   content: {
     renderer: {
       anchorLinks: false,
@@ -63,49 +66,4 @@ export default defineNuxtConfig({
     //   alwaysRedirect: false
     // }
   },
-  // 📱 PWA config
-  pwa: {
-    registerType: 'autoUpdate',
-    manifest: {
-      name: 'Coda Tech Solutions',
-      short_name: 'Coda',
-      description: 'Custom web & mobile development, software consulting and digital solutions.',
-      theme_color: '#020617',
-      background_color: '#020617',
-      start_url: '/',
-      display: 'standalone',
-      lang: 'en',
-      icons: [
-        {
-          src: '/android-chrome-192x192.png',
-          sizes: '192x192',
-          type: 'image/png'
-        },
-        {
-          src: '/android-chrome-512x512.png',
-          sizes: '512x512',
-          type: 'image/png'
-        },
-        {
-          src: '/favicon-32x32.png',
-          sizes: '32x32',
-          type: 'image/png'
-        },
-        {
-          src: '/favicon-16x16.png',
-          sizes: '16x16',
-          type: 'image/png'
-        }
-      ]
-    },
-    workbox: {
-      // شو الملفات اللي نخليها تنكاشي للأوفلاين/سرعة التحميل
-      globPatterns: ['**/*.{js,css,html,ico,png,svg,webp}'],
-    },
-    devOptions: {
-      enabled: true, // خليها true لو بدك تشوف PWA حتى بوضع dev
-      suppressWarnings: true,
-      type: 'module'
-    }
-  }
 })
